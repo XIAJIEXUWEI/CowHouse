@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class='index'>
+    <image src="cloud://start-project-8582df.7374-start-project-8582df/diego-ph-222506-unsplash.jpg"></image>
+    <view wx:if="{{isContent}}" class="header">
+        <view class="title ">CowHouse</view>
+        <view class="txt " role=" " aria-label=" "> Only the guilty need fear me. </view>
+    </view>
+    <view wx:if="{{!isContent}}" wx:for="{{list}}" wx:key="key" class="content-list">
+        <view bindtap="Forbes" class="list-name ">{{item.title}}
+            <text class="iconfont icon-xiangyoujiantou"></text>
+        </view>
+    </view>
+    <view wx:if="{{isContent}}" class='footer'>
+        <button bindtap="goContent" class='go-btn'>GO IT</button>
+    </view>
+</view>

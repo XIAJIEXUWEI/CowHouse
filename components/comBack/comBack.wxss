@@ -1,0 +1,9 @@
+/* components/Forbes/Fornes.wxss */
+@import "/static/css/icon.wxss";
+
+.comBack {
+    color: #fff;
+    position: fixed;
+    left: 30rpx;
+    z-index: 100;
+}

@@ -1,8 +1,8 @@
 {
     "pages": [
-        
-        "pages/index/index",
         "pages/Forbes/Forbes",
+        "pages/index/index",
+       
         "pages/logs/logs"
     ],
     "window": {

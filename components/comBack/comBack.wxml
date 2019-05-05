@@ -1,4 +1,4 @@
 <!--components/Forbes/Fornes.wxml-->
 <view style="top:{{top}}px; height: {{height-top}}px; line-height: {{height-top}}px;" class='comBack'>
-    <text bindtap="comBack" class="iconfont icon-houtui"></text>
+    <text bindtap="comBack" class="iconfont icon-houtui">返回</text>
 </view>

@@ -1,14 +1,21 @@
 <!--pages/Forbes/Forbes.wxml-->
-<comBack></comBack>
-<view class="header">
-  <image class="header-img" src="cloud://start-project-8582df.7374-start-project-8582df/header.png"></image>
-</view>
-<view class='content'>
-  <view bindtap="animation" data-index="{{index}}" wx:for="{{forbesInfo}}" wx:key="key" class="info">
-    <!--  -->
-    <view class="back-face {{item.revolve?'back-animation':''}}">
-      <text class='back-info-txt'>{{item.backTxt}}</text>
+<view class="contanir">
+    <comBack></comBack>
+    <view class="header">
+        <image class="header-img" src="cloud://start-project-8582df.7374-start-project-8582df/header.png"></image>
     </view>
-    <image class="info-img {{item.revolve?'animation':''}}" src="{{item.src}}"><text class="info-txt">{{item.nameTxt}}</text></image>
-  </view>
+    <view class='content'>
+        <view bindtap="animation" data-index="{{index}}" wx:for="{{forbesInfo}}" wx:key="key" style="transition: transform 1s; {{item.spread?'transform: translate('+(-10-240*((index+3)%3))+'rpx, 0rpx);':''}} left:{{10+240*((index+3)%3)}}rpx;top:{{item.spread?'':240*((index/3)|Int)+'rpx'}};"  class="{{item.spread?'back-info':'info'}}">
+            <!--  -->
+            <view class="{{item.spread?'spread':'back-face'}} {{item.revolve?'back-animation':''}}">
+                <view class='back-info-txt'>
+                    <text>{{item.backTxt}}</text>
+                </view>
+                <!-- <button catchtap="detail" class="back-btn">查看详情</button> -->
+            </view>
+            <image style="{{item.spread?'position:absolute;':''}}" class="info-img {{item.revolve?'animation':''}}" src="{{item.src}}">
+                <text class="info-txt">NO:{{index+1}}\n{{item.nameTxt}}</text>
+            </image>
+        </view>
+    </view>
 </view>

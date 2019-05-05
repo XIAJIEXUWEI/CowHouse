@@ -1,16 +1,15 @@
 <!--index.wxml-->
 <view class='index'>
     <image src="cloud://start-project-8582df.7374-start-project-8582df/diego-ph-222506-unsplash.jpg"></image>
-    <view wx:if="{{isContent}}" class="header">
-        <view class="title ">CowHouse</view>
-        <view class="txt " role=" " aria-label=" "> Only the guilty need fear me. </view>
+    <view wx:if="{{!animation}}" class="header {{toggleDelay?'disappear':''}}">
+        <view class="title">CowHouse</view>
+        <view class="txt"> Only the guilty need fear me. </view>
     </view>
-    <view wx:if="{{!isContent}}" bindtap="Forbes" wx:for="{{list}}" wx:key="key" data-index="{{index}}" class="content-list">
-        <view class="list-name ">{{item.title}}
-            <text class="iconfont icon-xiangyoujiantou"></text>
-        </view>
+    <view wx:if="{{animation}}" bindtap="forbes" wx:for="{{list}}" wx:key="key" data-index="{{index}}" class="content-list">
+        <view class="list-name">{{item.title}}</view>
+        <text class="iconfont icon-xiangyoujiantou"></text>
     </view>
-    <view wx:if="{{isContent}}" class='footer'>
-        <button bindtap="goContent" class='go-btn'>Go It</button>
+    <view wx:if="{{!animation}}" class="footer {{toggleDelay?'disappear':''}}">
+        <button bindtap="toggleDelay" class="go-btn">Go It</button>
     </view>
 </view>

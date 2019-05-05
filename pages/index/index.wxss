@@ -23,6 +23,22 @@ image {
     justify-content: center;
 }
 
+.disappear {
+    animation: appear 1s;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0.5
+    }
+    100% {
+        opacity: 0
+    }
+}
+
 .title {
     color: #fff;
     font-size: 42rpx;
@@ -54,7 +70,13 @@ image {
 
 .content-list {
     margin: 30rpx 0;
-    padding: 30rpx 100rpx;
+    padding: 0 20rpx;
+    width: 500rpx;
+    height: 100rpx;
+    display: flex;
+    flex-flow: row column;
+    justify-content: center;
+    align-items: center;
     border-top: 1rpx solid #fff;
     border-bottom: 1rpx solid #fff;
     border-radius: 10rpx;
@@ -63,10 +85,10 @@ image {
 
 .icon-xiangyoujiantou {
     margin-left: 50rpx;
+    color: #fff;
 }
 
 .list-name {
     color: #fff;
     font-size: 30rpx;
 }
-

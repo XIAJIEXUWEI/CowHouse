@@ -3,32 +3,39 @@
 const app = getApp()
 
 Page({
-  data: {
-    isContent: true,
-    list: [
-      {
-        title: "Forbes lists the top 100"
-      },
-      {
+    data: {
+        toggleDelay: false,
+        list: [
+            {
+                title: "Forbes lists the top 100"
+            },
+            {
+                title: "The Top25 richest women in China"
+            }
+        ],
+        animation: false
+    },
+    //事件处理函数
 
-      }
-    ]
-  },
-  //事件处理函数
+    onLoad: function() {
 
-  onLoad: function() {
+    },
+    //
+    forbes() {
+        wx.navigateTo({
+            url: '/pages/Forbes/Forbes',
+        })
+    },
 
-  },
-  //
-  Forbes() {
-    wx.navigateTo({
-      url: '/pages/Forbes/Forbes',
-    })
-  },
-
-  goContent() {
-    this.setData({
-      isContent: false
-    })
-  }
+    toggleDelay() {
+        var that = this;
+        that.setData({
+            toggleDelay: true
+        })
+        setTimeout(function () {
+            that.setData({
+                animation: true
+            })
+        }, 1000)
+    }
 })

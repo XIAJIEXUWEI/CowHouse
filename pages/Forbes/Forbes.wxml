@@ -1,11 +1,14 @@
 <!--pages/Forbes/Forbes.wxml-->
 <comBack></comBack>
 <view class="header">
-    <image class="header-img" src="cloud://start-project-8582df.7374-start-project-8582df/header.png" ></image>
+  <image class="header-img" src="cloud://start-project-8582df.7374-start-project-8582df/header.png"></image>
 </view>
 <view class='content'>
-    <view wx:for="{{20}}" wx:key="key" class="info">
-    <text class='info-txt'>Jeff Bzeos\n亚马逊CEO\n身家净值：1310(亿美元)</text>
-        <image class='info-img' src="cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png"></image>
+  <view bindtap="animation" data-index="{{index}}" wx:for="{{forbesInfo}}" wx:key="key" class="info">
+    <!--  -->
+    <view class="back-face {{item.revolve?'back-animation':''}}">
+      <text class='back-info-txt'>{{item.backTxt}}</text>
     </view>
+    <image class="info-img {{item.revolve?'animation':''}}" src="{{item.src}}"><text class="info-txt">{{item.nameTxt}}</text></image>
+  </view>
 </view>

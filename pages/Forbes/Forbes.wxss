@@ -1,46 +1,73 @@
 /* pages/Forbes/Forbes.wxss */
 
 .bar-img {
-    width: 750rpx;
+  width: 750rpx;
 }
 
 .header-img {
-    width: 750rpx;
-    height: 350rpx;
+  width: 750rpx;
+  height: 350rpx;
 }
 
 .content {
-    margin: 20rpx 10rpx;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+  margin: 20rpx 10rpx;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .info {
-    position: relative;
+  position: relative;
 }
 
 .info-img {
-    width: 200rpx;
-    height: 200rpx;
-    border-radius: 20rpx;
-    margin:0 20rpx 20rpx 20rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 20rpx;
+  margin: 0 20rpx 20rpx 20rpx;
+  z-index: 10;
+  transition: 1s;
+  backface-visibility: hidden;
 }
 
-.marsk {
-    width: 200rpx;
-    height: 200rpx;
-    border-radius: 20rpx;
-    margin:0 20rpx 20rpx 20rpx;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 9999;
+.back-info-txt {
+  position: absolute;
+  color: #fff;
+  font-size: 24rpx;
+  margin: 20rpx 20rpx 20rpx 40rpx;
+  transform: rotateY(180deg);
 }
 
 .info-txt {
-    position: absolute;
-    color: #fff;
-    font-size: 24rpx;
-    margin:20rpx 20rpx 20rpx 40rpx;
+  position: absolute;
+  top: 140rpx;
+  right: 0rpx;
+  color: #fff;
+  font-size: 30rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
+.animation {
+  transition: transform 1s;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.back-animation {
+  transition: transform 1s;
+  transform: rotateY(180deg);
+}
+
+.back-face {
+  background-color: #ccc;
+  width: 200rpx;
+  height: 200rpx;
+  z-index: -1;
+  border-radius: 20rpx;
+  margin: 0 20rpx 20rpx 20rpx;
+  position: absolute;
+  top: 0;
+  transition: 1s;
+}

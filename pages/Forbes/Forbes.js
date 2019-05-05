@@ -9,7 +9,21 @@ Page({
      */
     data: {
         top: app.globalData.StatusBar,
-        height: app.globalData.CustomBar
+        height: app.globalData.CustomBar,
+      forbesInfo:[
+          {
+            src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
+            backTxt: "亚马逊CEO\n身家净值：1310(亿美元)",
+            nameTxt: "Jeff Bzeos",
+            revolve: false,
+          },
+          {
+            src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
+            backTxt: "亚马逊CEO\n身家净值：1310(亿美元)",
+            nameTxt: "Jeff Bzeos",
+            revolve: false,
+          }
+        ]
     },
 
     /**
@@ -17,6 +31,14 @@ Page({
      */
     onLoad: function (options) {
 
+    },
+    //
+    animation(e) {
+      var bool = this.data.forbesInfo[e.currentTarget.dataset.index].revolve
+      this.data.forbesInfo[e.currentTarget.dataset.index].revolve = !bool
+      this.setData({
+        forbesInfo: this.data.forbesInfo
+      })
     },
 
     /**

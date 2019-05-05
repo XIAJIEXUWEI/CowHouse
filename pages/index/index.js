@@ -3,27 +3,32 @@
 const app = getApp()
 
 Page({
-    data: {
-        isContent: true,
-        list: [{
-            title: "Forbes lists the top 100"
-        }, ]
-    },
-    //事件处理函数
+  data: {
+    isContent: true,
+    list: [
+      {
+        title: "Forbes lists the top 100"
+      },
+      {
 
-    onLoad: function() {
+      }
+    ]
+  },
+  //事件处理函数
 
-    },
-    //
-    Forbes(){
-        wx.navigateTo({
-            url: '/pages/Forbes/Forbes',
-        })
-    },
+  onLoad: function() {
 
-    goContent() {
-        this.setData({
-            isContent: false
-        })
-    }
+  },
+  //
+  Forbes() {
+    wx.navigateTo({
+      url: '/pages/Forbes/Forbes',
+    })
+  },
+
+  goContent() {
+    this.setData({
+      isContent: false
+    })
+  }
 })

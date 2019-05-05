@@ -5,12 +5,12 @@
         <view class="title ">CowHouse</view>
         <view class="txt " role=" " aria-label=" "> Only the guilty need fear me. </view>
     </view>
-    <view wx:if="{{!isContent}}" wx:for="{{list}}" wx:key="key" class="content-list">
-        <view bindtap="Forbes" class="list-name ">{{item.title}}
+    <view wx:if="{{!isContent}}" bindtap="Forbes" wx:for="{{list}}" wx:key="key" data-index="{{index}}" class="content-list">
+        <view class="list-name ">{{item.title}}
             <text class="iconfont icon-xiangyoujiantou"></text>
         </view>
     </view>
     <view wx:if="{{isContent}}" class='footer'>
-        <button bindtap="goContent" class='go-btn'>GO IT</button>
+        <button bindtap="goContent" class='go-btn'>Go It</button>
     </view>
 </view>

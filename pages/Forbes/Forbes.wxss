@@ -51,9 +51,9 @@
 }
 
 .back-info-txt {
-    color: #8799a3;
+    color: #000;
     font-size: 24rpx;
-    padding: 0 20rpx 20rpx;
+    padding: 20rpx;
     transform: rotateY(180deg);
 }
 

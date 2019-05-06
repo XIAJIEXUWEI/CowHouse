@@ -16,7 +16,6 @@ Page({
                 nameTxt: "Jeff Bzeos",
                 revolve: false,
                 spread: false,
-                remove: false,
             },
             {
                 src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
@@ -24,7 +23,6 @@ Page({
                 nameTxt: "Jeff Bzeos",
                 revolve: false,
                 spread: false,
-                remove: false,
             },
             {
                 src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
@@ -32,7 +30,6 @@ Page({
                 nameTxt: "Jeff Bzeos",
                 revolve: false,
                 spread: false,
-                remove: false,
             },
             {
                 src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
@@ -40,7 +37,6 @@ Page({
                 nameTxt: "Jeff Bzeos",
                 revolve: false,
                 spread: false,
-                remove: false,
             }
         ],
 

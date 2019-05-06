@@ -51,22 +51,30 @@ Page({
     //
     animation(e) {
         var that = this;
-        var bool = this.data.forbesInfo[e.currentTarget.dataset.index].revolve
-        this.data.forbesInfo[e.currentTarget.dataset.index].revolve = !bool
-        this.setData({
-            forbesInfo: this.data.forbesInfo
-        })
-        setTimeout(function() {
-            var restore = that.data.forbesInfo[e.currentTarget.dataset.index].spread
-            that.data.forbesInfo[e.currentTarget.dataset.index].spread = !restore;
-            that.data.forbesInfo.forEach((v,i) => {
-                v.remove = !that.data.forbesInfo[i].remove
+        var bool = this.data.forbesInfo[e.currentTarget.dataset.index]
+        if (!bool.revolve) {
+            this.data.forbesInfo[e.currentTarget.dataset.index].revolve = !bool.revolve
+            this.setData({
+                forbesInfo: this.data.forbesInfo
             })
-            that.data.forbesInfo[e.currentTarget.dataset.index].remove = false;
+            setTimeout(function() {
+                that.data.forbesInfo[e.currentTarget.dataset.index].spread = !bool.spread;
+                that.setData({
+                    forbesInfo: that.data.forbesInfo
+                })
+            }, 500, bool)
+        } else {
+            that.data.forbesInfo[e.currentTarget.dataset.index].spread = !bool.spread;
             that.setData({
                 forbesInfo: that.data.forbesInfo
             })
-        }, 500)
+            setTimeout(function() {
+                that.data.forbesInfo[e.currentTarget.dataset.index].revolve = !bool.revolve
+                that.setData({
+                    forbesInfo: that.data.forbesInfo
+                })
+            }, 500, bool)
+        }
     },
     //
     detail() {

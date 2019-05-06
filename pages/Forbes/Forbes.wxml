@@ -5,7 +5,7 @@
         <image class="header-img" src="cloud://start-project-8582df.7374-start-project-8582df/header.png"></image>
     </view>
     <view class='content'>
-        <view bindtap="animation" data-index="{{index}}" wx:for="{{forbesInfo}}" wx:key="key" style="transition: all 1s; {{item.spread?'transform: translate('+(-10-240*((index+3)%3))+'rpx, 0rpx);':''}} left:{{10+240*((index+3)%3)}}rpx;top:{{item.spread?'0':240*((index/3)|Int)+'rpx'}};"  class="{{item.spread?'back-info':'info'}}">
+        <view bindtap="animation" data-index="{{index}}" wx:for="{{forbesInfo}}" wx:key="key" style="transition: all 1s; {{item.spread?'transform: translate('+(-10-240*((index+3)%3))+'rpx, 0rpx);':''}} left:{{10+240*((index+3)%3)}}rpx;top:{{item.spread?'0':240*((index/3)|Int)+'rpx'}}; {{item.spread||item.revolve?'z-index:200;':''}}"  class="{{item.spread?'back-info':'info'}}">
             <!--  -->
             <view class="{{item.spread?'spread':'back-face'}} {{item.revolve?'back-animation':''}}">
                 <view class='back-info-txt'>

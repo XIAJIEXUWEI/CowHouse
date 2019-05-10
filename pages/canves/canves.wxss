@@ -1,0 +1,16 @@
+/* pages/canves/canves.wxss */
+
+view {
+    width: 750rpx;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+canvas {
+    width: 750rpx;
+    height: 100%;
+}

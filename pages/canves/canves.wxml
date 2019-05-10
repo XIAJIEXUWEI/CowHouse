@@ -1,0 +1,4 @@
+<!--pages/canves/canves.wxml-->
+<view class='view'>
+    <canvas canvas-id='canves'></canvas>
+</view>

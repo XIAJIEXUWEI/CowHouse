@@ -1,0 +1,12 @@
+<!--pages/test/test.wxml-->
+<view class="tenst">
+    <view class="twice">
+        <view class="blank"></view>
+        <view class="left">
+            <view class="ears-left"></view>
+        </view>
+        <view class="right">
+            <view class="ears-right"></view>
+        </view>
+    </view>
+</view>

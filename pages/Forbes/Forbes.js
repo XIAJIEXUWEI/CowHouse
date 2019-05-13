@@ -37,7 +37,28 @@ Page({
                 nameTxt: "Jeff Bzeos",
                 revolve: false,
                 spread: false,
-            }
+            },
+            {
+                src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
+                backTxt: "亚马逊CEO\n身家净值：1310(亿美元)",
+                nameTxt: "Jeff Bzeos",
+                revolve: false,
+                spread: false,
+            },
+            {
+                src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
+                backTxt: "亚马逊CEO\n身家净值：1310(亿美元)",
+                nameTxt: "Jeff Bzeos",
+                revolve: false,
+                spread: false,
+            },
+            {
+                src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
+                backTxt: "亚马逊CEO\n身家净值：1310(亿美元)",
+                nameTxt: "Jeff Bzeos",
+                revolve: false,
+                spread: false,
+            },
         ],
 
     },

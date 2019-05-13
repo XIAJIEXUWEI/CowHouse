@@ -6,7 +6,9 @@ let position = {
     x: 0,
     y: 0,
     vx: 2,
-    vy: 2
+    vy: 2,
+    sclae: 1,
+    fre: 0.02
 }
 
 Page({
@@ -15,7 +17,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        url: ""
+        
     },
 
     /**
@@ -29,20 +31,26 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function() {
-
+        
     },
-    canvas: function () {
+    canvas: function() {
         var p = position
         p.x += p.vx
+        p.sclae += p.fre
+        var frequency = 0.02
         if (p.x >= 150) {
             p.vx = -2
-        }
-        if (p.x <= 0) {
+        } else if (p.x <= 0) {
             p.vx = 2
         }
+        if (p.sclae >=1.2) {
+            p.fre = -frequency
+        } else if (p.sclae <= 1) {
+            p.fre = frequency
+        }
         /**
-     * 画布封装
-     */
+         * canvas函数封装
+         */
 
         //贝塞尔曲线
         function bezierCurve(mx, my, bx, by, cx, cy, tx, ty, bodSty, backSty) {
@@ -120,9 +128,9 @@ Page({
         }
 
         /**
-         * 
+         * canvas页面渲染
          */
-        
+
         //左手
         head(40, 260, 70, 245, 90, 280, 80, 310, 70, 310, 40, 275, 40, 260, 'rgb(2,155,225)', '#000')
         arc(40, 240, 25, 0, 2, '#000', '#fff')
@@ -192,8 +200,25 @@ Page({
         footer(85, 405, 150, 405, 150, 435, 60, 450, 50, 415, 85, 405, '#fff', '#000')
         footer(215, 405, 150, 405, 150, 435, 230, 450, 250, 415, 215, 405, '#fff', '#000')
 
+        function bezierCurveSclae(mx, my, bx, by, cx, cy, tx, ty, bodSty, backSty) {
+            ctx.save()
+            ctx.beginPath()
+            ctx.moveTo(mx * p.sclae + p.x, my * p.sclae)
+            ctx.bezierCurveTo(bx * p.sclae + p.x, by * p.sclae, cx * p.sclae + p.x, cy * p.sclae, tx * p.sclae + p.x, ty * p.sclae)
+            ctx.translate(-(130 * (p.sclae - 1)), -(575 * (p.sclae-1)))
+            ctx.setStrokeStyle(bodSty)
+            ctx.setFillStyle(backSty)
+            ctx.fill()
+            ctx.stroke()
+            ctx.restore()
+        }
+
+        bezierCurveSclae(150, 500, 280, 420, 280, 600, 150, 650, '#000', 'rgb(220,0,38)')
+        bezierCurveSclae(151, 500, 20, 420, 20, 600, 151, 650, '#000', 'rgb(220,0,38)')
         ctx.draw()
     },
+
+    
 
     /**
      * 生命周期函数--监听页面显示

@@ -57,6 +57,11 @@
     transform: rotateY(180deg);
 }
 
+.concat {
+    width: 710rpx;
+
+}
+
 .info-txt {
     position: absolute;
     top: 100rpx;
@@ -114,6 +119,7 @@
     left: 0rpx;
     transition:all 1s;
     z-index: 200;
+    overflow-x: hidden;
 }
 
 .remove {

@@ -7,3 +7,10 @@
     left: 30rpx;
     z-index: 100;
 }
+
+.title {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}

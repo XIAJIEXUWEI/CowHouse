@@ -1,9 +1,8 @@
 {
     "pages": [
-        "pages/canves/canves",
         "pages/index/index",
         "pages/Forbes/Forbes",
-        
+        "pages/canves/canves",
         "pages/test/test",
         "pages/logs/logs"
     ],

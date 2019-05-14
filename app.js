@@ -1,4 +1,8 @@
 //app.js
+
+wx.cloud.init()
+const db = wx.cloud.database()
+
 App({
     onLaunch: function() {
         // 展示本地存储能力
@@ -20,5 +24,19 @@ App({
     },
     globalData: {
         userInfo: null
-    }
+    },
+
+    //封装获取数据函数
+    cloudGet(collection, doc) {
+        return new Promise((res, rej) => {
+            db.collection(collection).doc(doc).get({
+                success(msg){
+                    res(msg)
+                },
+                fail(err) {
+                    rej(err)
+                }
+            })
+        })
+    },
 })

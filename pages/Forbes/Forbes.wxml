@@ -1,22 +1,25 @@
 <!--pages/Forbes/Forbes.wxml-->
 <view class="contanir">
-    <comBack></comBack>
+    <comBack title="{{title}}"></comBack>
     <view class="header">
-        <image class="header-img" src="cloud://start-project-8582df.7374-start-project-8582df/header.png"></image>
+        <image class="header-img" lazy-load="true" src="cloud://start-project-8582df.7374-start-project-8582df/header.png"></image>
+        <view class="title">{{title}}</view>
     </view>
     <view class='content'>
-        <view bindtap="animation" data-index="{{index}}" wx:for="{{forbesInfo}}" wx:key="key" style="transition: all 1s; {{item.spread?'transform: translate('+(-5-240*((index+3)%3))+'rpx, 0rpx);':''}} left:{{5+240*((index+3)%3)}}rpx;top:{{item.spread?'0':220*((index/3)|Int)+'rpx'}}; {{item.spread||item.revolve?'z-index:200;':''}}"
+        <view bindtap="animation" data-index="{{index}}" wx:for="{{forbesList}}" wx:key="key" style="transition: all 1s; {{item.spread?'transform: translate('+(-5-240*((index+3)%3))+'rpx, 0rpx);':''}} left:{{5+240*((index+3)%3)}}rpx;top:{{item.spread?'0':220*((index/3)|Int)+'rpx'}}; {{item.spread||item.revolve?'z-index:200;':''}}"
             class="{{item.spread?'back-info':'info'}}">
             <!--  -->
             <view class="{{item.spread?'spread':'back-face'}} {{item.revolve?'back-animation':''}}">
                 <view class='back-info-txt'>
-                    <text>{{item.backTxt}}</text>
-                    <view class="concat" wx:if="{{item.spread}}">每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。</view>
+                    <view wx:if="{{item.spread}}" class="fbr-header">{{item.name}}</view>
+                    <view style="font-size:28rpx;"><text class="fbr-info">{{item.position}}\n{{item.rich}}</text></view>
+                    <view wx:if="{{item.spread}}" class="fbr-header">人物介绍</view>
+                    <view class="concat" wx:if="{{item.spread}}" ><text space='emsp'>  {{item.info}}</text></view>
                 </view>
                 <!-- <button catchtap="detail" class="back-btn">查看详情</button> -->
             </view>
-            <image style="{{item.spread?'position:absolute;':''}}" class="info-img {{item.revolve?'animation':''}}" src="{{item.src}}">
-                <text class="info-txt">NO:{{index+1}}\n{{item.nameTxt}}</text>
+            <image lazy-load="true" style="{{item.spread?'position:absolute;':''}}" class="info-img {{item.revolve?'animation':''}}" src="{{item.src}}">
+                <text class="info-txt">NO:{{index+1 +'\n'+ item.name}}</text>
             </image>
         </view>
     </view>

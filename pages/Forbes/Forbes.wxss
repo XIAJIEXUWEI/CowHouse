@@ -10,6 +10,19 @@
     height: 25%;
 }
 
+.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25%;
+    width: 750rpx;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80rpx;
+    color: #fff;
+}
 
 .header-img {
     width: 750rpx;
@@ -37,7 +50,7 @@
     top: 0;
     width: 750rpx;
     height: 100%;
-    transition:all 1s;
+    transition: all 1s;
 }
 
 .info-img {
@@ -57,9 +70,15 @@
     transform: rotateY(180deg);
 }
 
-.concat {
-    width: 710rpx;
+.fbr-header {
+    font-size: 40rpx;
+    margin:30rpx 0 10rpx 10rpx;
+}
 
+.concat {
+    width: 690rpx;
+    font-size: 30rpx;
+    margin: 20rpx 10rpx;
 }
 
 .info-txt {
@@ -117,7 +136,7 @@
     position: absolute;
     top: 0;
     left: 0rpx;
-    transition:all 1s;
+    transition: all 1s;
     z-index: 200;
     overflow-x: hidden;
 }

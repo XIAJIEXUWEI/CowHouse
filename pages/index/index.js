@@ -7,9 +7,11 @@ Page({
         toggleDelay: false,
         list: [
             {
+                index: "forbesList",
                 title: "Forbes lists the top 100"
             },
             {
+                index: "richestWomenCn",
                 title: "The Top25 richest women in China"
             }
         ],
@@ -21,9 +23,12 @@ Page({
 
     },
     //
-    forbes() {
+    forbes(e) {
+        var that = this;
+        var title = that.data.list[e.currentTarget.dataset.index].title
+        var index = that.data.list[e.currentTarget.dataset.index].index
         wx.navigateTo({
-            url: '/pages/Forbes/Forbes',
+            url: '/pages/Forbes/Forbes?title=' + title + '&index=' + index,
         })
     },
 

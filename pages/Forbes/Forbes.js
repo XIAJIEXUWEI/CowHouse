@@ -10,56 +10,8 @@ Page({
     data: {
         top: app.globalData.StatusBar,
         height: app.globalData.CustomBar,
-        forbesInfo: [{
-                src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
-                backTxt: "亚马逊CEO\n身家净值：1310(亿美元)",
-                nameTxt: "Jeff Bzeos",
-                revolve: false,
-                spread: false,
-            },
-            {
-                src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
-                backTxt: "亚马逊CEO\n身家净值：1310(亿美元)",
-                nameTxt: "Jeff Bzeos",
-                revolve: false,
-                spread: false,
-            },
-            {
-                src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
-                backTxt: "亚马逊CEO\n身家净值：1310(亿美元)",
-                nameTxt: "Jeff Bzeos",
-                revolve: false,
-                spread: false,
-            },
-            {
-                src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
-                backTxt: "亚马逊CEO\n身家净值：1310(亿美元)",
-                nameTxt: "Jeff Bzeos",
-                revolve: false,
-                spread: false,
-            },
-            {
-                src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
-                backTxt: "亚马逊CEO\n身家净值：1310(亿美元)",
-                nameTxt: "Jeff Bzeos",
-                revolve: false,
-                spread: false,
-            },
-            {
-                src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
-                backTxt: "亚马逊CEO\n身家净值：1310(亿美元)",
-                nameTxt: "Jeff Bzeos",
-                revolve: false,
-                spread: false,
-            },
-            {
-                src: "cloud://start-project-8582df.7374-start-project-8582df/Jeff Bezos.png",
-                backTxt: "亚马逊CEO\n身家净值：1310(亿美元)",
-                nameTxt: "Jeff Bzeos",
-                revolve: false,
-                spread: false,
-            },
-        ],
+        title: '',
+        forbesList: null
 
     },
 
@@ -67,32 +19,54 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
+        var that = this;
+        wx.showLoading({
+            title: '加载中...',
+        })
+        if (options.index) {
+            app.cloudGet(options.index, options.index)
+                .then(res => {
+                    wx.hideLoading()
+                    that.setData({
+                        forbesList: res.data.list
+                    })
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        }
+
+        if (options.title) {
+            this.setData({
+                title: options.title
+            })
+        }
 
     },
     //
     animation(e) {
         var that = this;
-        var bool = this.data.forbesInfo[e.currentTarget.dataset.index]
+        var bool = this.data.forbesList[e.currentTarget.dataset.index]
         if (!bool.revolve) {
-            this.data.forbesInfo[e.currentTarget.dataset.index].revolve = !bool.revolve
+            this.data.forbesList[e.currentTarget.dataset.index].revolve = !bool.revolve
             this.setData({
-                forbesInfo: this.data.forbesInfo
+                forbesList: this.data.forbesList
             })
             setTimeout(function() {
-                that.data.forbesInfo[e.currentTarget.dataset.index].spread = !bool.spread;
+                that.data.forbesList[e.currentTarget.dataset.index].spread = !bool.spread;
                 that.setData({
-                    forbesInfo: that.data.forbesInfo
+                    forbesList: that.data.forbesList
                 })
             }, 500, bool)
         } else {
-            that.data.forbesInfo[e.currentTarget.dataset.index].spread = !bool.spread;
+            that.data.forbesList[e.currentTarget.dataset.index].spread = !bool.spread;
             that.setData({
-                forbesInfo: that.data.forbesInfo
+                forbesList: that.data.forbesList
             })
             setTimeout(function() {
-                that.data.forbesInfo[e.currentTarget.dataset.index].revolve = !bool.revolve
+                that.data.forbesList[e.currentTarget.dataset.index].revolve = !bool.revolve
                 that.setData({
-                    forbesInfo: that.data.forbesInfo
+                    forbesList: that.data.forbesList
                 })
             }, 500, bool)
         }
